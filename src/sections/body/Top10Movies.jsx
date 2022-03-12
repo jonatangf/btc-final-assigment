@@ -1,23 +1,41 @@
-import {Component} from "react";
-import {connect} from "react-redux";
+import {useEffect} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import * as actions from "../../store/actions";
 
-const mapStateToProps = (state) => {
-    return {
-        top10Movies: state.top10Movies,
-        top10MoviesLoading: state.top10MoviesLoading
-    }
-};
+const Top10Movies = () => {
 
-class Top10Movies extends Component {
+    const dispatch = useDispatch();
+    const top10Movies = useSelector(state => state.top10Movies);
+    const top10MoviesLoading = useSelector(state => state.top10MoviesLoading);
 
-    render() {
-        return (
-            <div>
-                {this.props.top10MoviesLoading ? <div>Loading...</div> : <div>Top 10</div>}
-            </div>
-        );
-    }
+    useEffect(() => {
+        dispatch({type: actions.GET_TOP_10_MOVIES});
+    }, []);
 
+    return (
+        <div>
+            {top10Movies === undefined ?
+                <div>No existen películas</div> :
+                <div>
+                    {
+                        top10MoviesLoading ?
+                            <div>Loading...</div>
+                            :
+                            <div>
+                                {
+                                    top10Movies.map(m => (
+                                        <div key={m.id}>
+                                            <img src={m.poster} alt={m.title}/>
+                                            <div>{m.title}</div>
+                                        </div>
+                                    ))
+                                }
+                            </div>
+                    }
+                </div>
+            }
+        </div>
+    );
 }
 
-export default connect(mapStateToProps)(Top10Movies);
+export default Top10Movies;
