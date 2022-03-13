@@ -16,6 +16,18 @@ function reducer(
                 ...state,
                 top10MoviesLoading: true,
             };
+        case actions.GET_TOP_10_MOVIES_SUCCESS:
+            return {
+                ...state,
+                top10MoviesLoading: false,
+                top10Movies: action.payload,
+            };
+        case actions.GET_TOP_10_MOVIES_ERROR:
+            return {
+                ...state,
+                top10MoviesLoading: false,
+                top10Movies: [],
+            };
         default:
             return state;
     }

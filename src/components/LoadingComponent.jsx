@@ -5,3 +5,5 @@ const LoadingComponent = () => {
         <LinearProgress/>
     );
 }
+
+export default LoadingComponent;

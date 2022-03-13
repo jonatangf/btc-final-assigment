@@ -1,6 +1,8 @@
 import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import * as actions from "../../store/actions";
+import {getTop10Movies} from "../../store/actions";
+import LoadingComponent from "../../components/LoadingComponent";
+import Movie from "../../components/Movie";
 
 const Top10Movies = () => {
 
@@ -8,27 +10,37 @@ const Top10Movies = () => {
     const top10Movies = useSelector(state => state.top10Movies);
     const top10MoviesLoading = useSelector(state => state.top10MoviesLoading);
 
+    async function fetchTop10Movies() {
+        dispatch(getTop10Movies());
+    }
+
     useEffect(() => {
-        dispatch({type: actions.GET_TOP_10_MOVIES});
+        (async () => {
+            await fetchTop10Movies();
+        })();
     }, []);
 
+    useEffect(() => {
+        console.log(top10Movies);
+    }, [top10MoviesLoading]);
+
     return (
-        <div>
+        <div className="container">
             {top10Movies === undefined ?
                 <div>No existen películas</div> :
                 <div>
                     {
                         top10MoviesLoading ?
-                            <div>Loading...</div>
+                            <LoadingComponent/>
                             :
                             <div>
                                 {
                                     top10Movies.map(m => (
-                                        <div key={m.id}>
-                                            <img src={m.poster} alt={m.title}/>
-                                            <div>{m.title}</div>
-                                        </div>
-                                    ))
+                                            <div key={m.id}>
+                                                <Movie movie={m}/>
+                                            </div>
+                                        )
+                                    )
                                 }
                             </div>
                     }
