@@ -3,6 +3,8 @@ import * as actions from "./actions";
 const initialState = {
     top10MoviesLoading: false,
     top10Movies: [],
+    titleMovies: [],
+    titleMoviesLoading: false,
 };
 
 function reducer(
@@ -27,6 +29,17 @@ function reducer(
                 ...state,
                 top10MoviesLoading: false,
                 top10Movies: [],
+            };
+        case actions.GET_TITLE_MOVIES:
+            return {
+                ...state,
+                titleMoviesLoading: true,
+            };
+        case actions.GET_TITLE_MOVIES_SUCCESS:
+            return {
+                ...state,
+                titleMoviesLoading: false,
+                titleMovies: action.payload,
             };
         default:
             return state;
