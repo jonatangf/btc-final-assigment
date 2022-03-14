@@ -21,21 +21,20 @@ const SearchByOriginalTitle = () => {
     };
 
     return (
-        <div className="container search-by-title">
-            <h2>Search by title</h2>
+        <div className="container">
+            <h2>Busca por título original</h2>
             <div className="row search-field">
                 <div className="col-sm-3">
                     <TextField fullWidth
-                               label="Movie title ..."
+                               label="Título original"
                                type="search"
                                variant="filled"
-                               onChange={handleOnChange}
-                    />
+                               onChange={handleOnChange}/>
                 </div>
                 <div className="col-sm-2">
                     <Button variant="contained"
                             color="primary"
-                            onClick={searchByTitle}>Search</Button>
+                            onClick={searchByTitle}>Buscar</Button>
                 </div>
             </div>
             <div className="row">
