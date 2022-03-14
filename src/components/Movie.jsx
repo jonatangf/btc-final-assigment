@@ -1,8 +1,10 @@
+import {Card} from "@mui/material";
+
 const Movie = ({movie}) => {
     return (
-        <div className="movie">
-            <img src={movie.poster} alt={movie.title}/>
-        </div>
+        <Card className="movie">
+            <div>{movie.title}</div>
+        </Card>
     );
 }
 

@@ -2,7 +2,7 @@ import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {getTop10Movies} from "../../store/actions";
 import LoadingComponent from "../../components/LoadingComponent";
-import Movie from "../../components/Movie";
+import MovieList from "../../components/MovieList";
 
 const Top10Movies = () => {
 
@@ -26,26 +26,7 @@ const Top10Movies = () => {
 
     return (
         <div className="container">
-            {top10Movies === undefined ?
-                <div>No existen películas</div> :
-                <div>
-                    {
-                        top10MoviesLoading ?
-                            <LoadingComponent/>
-                            :
-                            <div>
-                                {
-                                    top10Movies.map(m => (
-                                            <div key={m.id}>
-                                                <Movie movie={m}/>
-                                            </div>
-                                        )
-                                    )
-                                }
-                            </div>
-                    }
-                </div>
-            }
+            {top10MoviesLoading ? <LoadingComponent/> : <MovieList movies={top10Movies}/>}
         </div>
     );
 }
