@@ -1,10 +1,10 @@
 import * as actions from "./actions";
 
 const initialState = {
-    top10MoviesLoading: false,
     top10Movies: [],
-    titleMovies: [],
-    titleMoviesLoading: false,
+    top10MoviesLoading: false,
+    spanishTitleMovies: [],
+    spanishTitleMoviesLoading: false,
 };
 
 function reducer(
@@ -30,16 +30,39 @@ function reducer(
                 top10MoviesLoading: false,
                 top10Movies: [],
             };
-        case actions.GET_TITLE_MOVIES:
+        case actions.GET_MOVIES_BY_SPANISH_TITLE:
             return {
                 ...state,
-                titleMoviesLoading: true,
+                spanishTitleMoviesLoading: true,
             };
-        case actions.GET_TITLE_MOVIES_SUCCESS:
+        case actions.GET_MOVIES_BY_SPANISH_TITLE_SUCCESS:
             return {
                 ...state,
-                titleMoviesLoading: false,
-                titleMovies: action.payload,
+                spanishTitleMoviesLoading: false,
+                spanishTitleMovies: action.payload,
+            };
+        case actions.GET_MOVIES_BY_SPANISH_TITLE_ERROR:
+            return {
+                ...state,
+                spanishTitleMoviesLoading: false,
+                spanishTitleMovies: [],
+            };
+        case actions.GET_MOVIES_BY_ORIGINAL_TITLE:
+            return {
+                ...state,
+                originalTitleMoviesLoading: true,
+            };
+        case actions.GET_MOVIES_BY_ORIGINAL_TITLE_SUCCESS:
+            return {
+                ...state,
+                originalTitleMoviesLoading: false,
+                originalTitleMovies: action.payload,
+            };
+        case actions.GET_MOVIES_BY_ORIGINAL_TITLE_ERROR:
+            return {
+                ...state,
+                originalTitleMoviesLoading: false,
+                originalTitleMovies: [],
             };
         default:
             return state;

@@ -1,20 +1,20 @@
 import {Button, TextField} from "@mui/material";
-import {getByTitle} from "../../store/actions";
+import {getBySpanishTitle} from "../../store/actions";
 import {useDispatch, useSelector} from "react-redux";
 import LoadingComponent from "../../components/LoadingComponent";
 import MovieList from "../../components/MovieList";
 import {useState} from "react";
 
-const SearchByTitle = () => {
+const SearchBySpanishTitle = () => {
 
     const dispatch = useDispatch();
-    const titleMovies = useSelector(state => state.titleMovies);
-    const titleMoviesLoading = useSelector(state => state.titleMoviesLoading);
+    const titleMovies = useSelector(state => state.spanishTitleMovies);
+    const titleMoviesLoading = useSelector(state => state.spanishTitleMoviesLoading);
 
     const [searchTitle, setSearchTitle] = useState('');
 
     async function searchByTitle() {
-        dispatch(getByTitle(searchTitle));
+        dispatch(getBySpanishTitle(searchTitle));
     }
 
     const handleOnChange = (e) => {
@@ -24,22 +24,19 @@ const SearchByTitle = () => {
     return (
         <div className="container search-by-title">
             <h2>Search by title</h2>
-            <div className="row">
+            <div className="row search-field">
                 <div className="col-sm-3">
-                    <TextField
-                        id="filled-search"
-                        label="Search field"
-                        type="search"
-                        variant="filled"
+                    <TextField fullWidth
+                               label="Movie title ..."
+                               type="search"
+                               variant="filled"
+                               onChange={handleOnChange}
                     />
                 </div>
                 <div className="col-sm-2">
                     <Button variant="contained"
                             color="primary"
-                            onClick={searchByTitle}
-                            onChange={handleOnChange}
-                            value={searchTitle}
-                    >Search</Button>
+                            onClick={searchByTitle}>Search</Button>
                 </div>
             </div>
             <div className="row">
@@ -51,4 +48,4 @@ const SearchByTitle = () => {
     );
 };
 
-export default SearchByTitle;
+export default SearchBySpanishTitle;

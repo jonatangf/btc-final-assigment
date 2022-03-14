@@ -4,8 +4,8 @@ const MovieList = ({movies}) => {
     return (
         <div className="row movie-list">
             {movies === undefined || movies.length === 0 ? (
-                <div className="movie-list__empty">
-                    <h2>No hay películas en este listado</h2>
+                <div className="container">
+                    <h4>No hay películas en este listado</h4>
                 </div>
             ) : (
                 movies.map(movie => (

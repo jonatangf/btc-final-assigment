@@ -22,6 +22,12 @@
     margin-bottom: 8px;
 }
 
-#filled-search {
+.search-field {
+    width: 100%;
+    height: auto;
+    margin-bottom: 24px;
+}
+
+.search-field input {
     color: #f1f1f1;
 }
