@@ -10,7 +10,7 @@ const MovieList = ({movies}) => {
                 </div>
             ) : (
                 movies.map(movie => (
-                    <Grid item key={movie.id} xs={2}>
+                    <Grid item key={movie.id} xs={2.3}>
                         <Movie movie={movie}/>
                     </Grid>
                 ))

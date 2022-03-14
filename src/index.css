@@ -9,6 +9,7 @@
     background-color: dodgerblue;
     padding-bottom: 24px;
     color: #f1f1f1;
+    min-height: 100vh;
 }
 
 .movie {
@@ -33,5 +34,5 @@
 }
 
 img {
-    border-radius: 6px;
+    border-radius: 4px;
 }
