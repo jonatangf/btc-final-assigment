@@ -31,3 +31,7 @@
 .search-field input {
     color: #f1f1f1;
 }
+
+img {
+    border-radius: 6px;
+}

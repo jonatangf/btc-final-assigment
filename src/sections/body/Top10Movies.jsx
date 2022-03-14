@@ -16,8 +16,9 @@ const Top10Movies = () => {
 
     useEffect(() => {
         (async () => {
-            await fetchTop10Movies();
-        })();
+                await fetchTop10Movies();
+            }
+        )();
     }, []);
 
     useEffect(() => {
@@ -26,7 +27,7 @@ const Top10Movies = () => {
 
     return (
         <div className="container">
-            {top10MoviesLoading ? <LoadingComponent/> : <MovieList movies={top10Movies}/>}
+            {top10MoviesLoading ? <LoadingComponent/> : <MovieList movies={top10Movies.slice(0, 10)}/>}
         </div>
     );
 }

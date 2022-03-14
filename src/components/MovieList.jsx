@@ -1,20 +1,21 @@
 import Movie from "./Movie";
+import {Grid} from "@mui/material";
 
 const MovieList = ({movies}) => {
     return (
-        <div className="row movie-list">
+        <Grid container spacing={2} className="movie-list">
             {movies === undefined || movies.length === 0 ? (
                 <div className="container">
                     <h4>No hay películas en este listado</h4>
                 </div>
             ) : (
                 movies.map(movie => (
-                    <div className="col-sm-3" key={movie.id}>
+                    <Grid item key={movie.id} xs={2}>
                         <Movie movie={movie}/>
-                    </div>
+                    </Grid>
                 ))
             )}
-        </div>
+        </Grid>
     );
 };
 
