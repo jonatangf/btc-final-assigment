@@ -1,8 +1,8 @@
 import {Button, TextField} from "@mui/material";
-import {getBySpanishTitle} from "../../store/actions";
+import {getMoviesBySpanishTitle} from "../../store/actions";
 import {useDispatch, useSelector} from "react-redux";
 import LoadingComponent from "../../components/LoadingComponent";
-import MovieList from "../../components/MovieList";
+import ItemList from "../../components/ItemList";
 import {useState} from "react";
 
 const SearchBySpanishTitle = () => {
@@ -14,7 +14,7 @@ const SearchBySpanishTitle = () => {
     const [searchTitle, setSearchTitle] = useState('');
 
     async function searchByTitle() {
-        dispatch(getBySpanishTitle(searchTitle));
+        dispatch(getMoviesBySpanishTitle(searchTitle));
     }
 
     const handleOnChange = (e) => {
@@ -40,7 +40,7 @@ const SearchBySpanishTitle = () => {
             </div>
             <div className="row">
                 <div className="container">
-                    {titleMoviesLoading ? <LoadingComponent/> : <MovieList movies={titleMovies}/>}
+                    {titleMoviesLoading ? <LoadingComponent/> : <ItemList movies={titleMovies}/>}
                 </div>
             </div>
         </div>

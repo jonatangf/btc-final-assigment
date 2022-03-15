@@ -2,9 +2,9 @@ import {Card} from "@mui/material";
 
 const BASE_IMAGE_URL = 'https://image.tmdb.org/t/p/w440_and_h660_face/';
 
-const Movie = ({movie}) => {
+const Item = ({movie}) => {
     return (
-        <Card className="movie">
+        <Card className="item">
             <div>
                 <img src={BASE_IMAGE_URL + movie.poster_path} alt={movie.title}/>
             </div>
@@ -13,4 +13,4 @@ const Movie = ({movie}) => {
     );
 }
 
-export default Movie;
+export default Item;

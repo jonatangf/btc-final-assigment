@@ -1,9 +1,9 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useState} from "react";
-import {getByOriginalTitle} from "../../store/actions";
+import {getMoviesByOriginalTitle} from "../../store/actions";
 import {Button, TextField} from "@mui/material";
 import LoadingComponent from "../../components/LoadingComponent";
-import MovieList from "../../components/MovieList";
+import ItemList from "../../components/ItemList";
 
 const SearchByOriginalTitle = () => {
     const dispatch = useDispatch();
@@ -13,7 +13,7 @@ const SearchByOriginalTitle = () => {
     const [searchTitle, setSearchTitle] = useState('');
 
     async function searchByTitle() {
-        dispatch(getByOriginalTitle(searchTitle));
+        dispatch(getMoviesByOriginalTitle(searchTitle));
     }
 
     const handleOnChange = (e) => {
@@ -39,7 +39,7 @@ const SearchByOriginalTitle = () => {
             </div>
             <div className="row">
                 <div className="container">
-                    {titleMoviesLoading ? <LoadingComponent/> : <MovieList movies={titleMovies}/>}
+                    {titleMoviesLoading ? <LoadingComponent/> : <ItemList movies={titleMovies}/>}
                 </div>
             </div>
         </div>

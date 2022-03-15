@@ -12,12 +12,12 @@
     min-height: 100vh;
 }
 
-.movie {
+.item {
     margin-bottom: 18px;
     padding: 8px;
 }
 
-.movie img {
+.item img {
     width: 100%;
     height: auto;
     margin-bottom: 8px;

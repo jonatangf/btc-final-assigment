@@ -1,8 +1,8 @@
 import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {getTop10Movies} from "../../store/actions";
-import LoadingComponent from "../../components/LoadingComponent";
-import MovieList from "../../components/MovieList";
+import {getTop10Movies} from "../../../store/actions";
+import LoadingComponent from "../../../components/LoadingComponent";
+import ItemList from "../../../components/ItemList";
 
 const Top10Movies = () => {
 
@@ -27,7 +27,8 @@ const Top10Movies = () => {
 
     return (
         <div className="container">
-            {top10MoviesLoading ? <LoadingComponent/> : <MovieList movies={top10Movies}/>}
+            <h3>Películas</h3>
+            {top10MoviesLoading ? <LoadingComponent/> : <ItemList movies={top10Movies}/>}
         </div>
     );
 }

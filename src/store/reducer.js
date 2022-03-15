@@ -3,8 +3,12 @@ import * as actions from "./actions";
 const initialState = {
     top10Movies: [],
     top10MoviesLoading: false,
+    top10Series: [],
+    top10SeriesLoading: false,
     spanishTitleMovies: [],
     spanishTitleMoviesLoading: false,
+    originalTitleMovies: [],
+    originalTitleMoviesLoading: false,
 };
 
 function reducer(
@@ -29,6 +33,23 @@ function reducer(
                 ...state,
                 top10MoviesLoading: false,
                 top10Movies: [],
+            };
+        case actions.GET_TOP_10_SERIES:
+            return {
+                ...state,
+                top10SeriesLoading: true,
+            };
+        case actions.GET_TOP_10_SERIES_SUCCESS:
+            return {
+                ...state,
+                top10SeriesLoading: false,
+                top10Series: action.payload,
+            };
+        case actions.GET_TOP_10_SERIES_ERROR:
+            return {
+                ...state,
+                top10SeriesLoading: false,
+                top10Series: [],
             };
         case actions.GET_MOVIES_BY_SPANISH_TITLE:
             return {
