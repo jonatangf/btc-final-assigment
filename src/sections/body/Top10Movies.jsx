@@ -27,7 +27,7 @@ const Top10Movies = () => {
 
     return (
         <div className="container">
-            {top10MoviesLoading ? <LoadingComponent/> : <MovieList movies={top10Movies.slice(0, 10)}/>}
+            {top10MoviesLoading ? <LoadingComponent/> : <MovieList movies={top10Movies}/>}
         </div>
     );
 }

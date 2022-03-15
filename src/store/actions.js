@@ -18,7 +18,7 @@ export const getTop10Movies = () => async (dispatch) => {
             console.log(response);
             return dispatch({
                 type: GET_TOP_10_MOVIES_SUCCESS,
-                payload: response.data.results
+                payload: response.data.results.slice(0, 10)
             })
         })
         .catch(error => {
