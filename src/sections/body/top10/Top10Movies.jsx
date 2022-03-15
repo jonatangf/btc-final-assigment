@@ -21,14 +21,10 @@ const Top10Movies = () => {
         )();
     }, []);
 
-    useEffect(() => {
-        console.log(top10Movies);
-    }, [top10MoviesLoading]);
-
     return (
         <div className="container">
             <h3>Películas</h3>
-            {top10MoviesLoading ? <LoadingComponent/> : <ItemList movies={top10Movies}/>}
+            {top10MoviesLoading ? <LoadingComponent/> : <ItemList items={top10Movies}/>}
         </div>
     );
 }

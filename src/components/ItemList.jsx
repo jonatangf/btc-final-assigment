@@ -1,7 +1,7 @@
 import Item from "./Item";
 import {Grid} from "@mui/material";
 
-const ItemList = ({movies: items}) => {
+const ItemList = ({items}) => {
     return (
         <Grid container spacing={2} className="movie-list">
             {items === undefined || items.length === 0 ? (
@@ -11,7 +11,7 @@ const ItemList = ({movies: items}) => {
             ) : (
                 items.map(item => (
                     <Grid item key={item.id} xs={2.3}>
-                        <Item movie={item}/>
+                        <Item item={item}/>
                     </Grid>
                 ))
             )}

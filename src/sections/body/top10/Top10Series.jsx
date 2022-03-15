@@ -29,7 +29,7 @@ const Top10Movies = () => {
     return (
         <div className="container">
             <h3>Series</h3>
-            {top10SeriesLoading ? <LoadingComponent/> : <ItemList movies={top10Series}/>}
+            {top10SeriesLoading ? <LoadingComponent/> : <ItemList items={top10Series}/>}
         </div>
     );
 }
