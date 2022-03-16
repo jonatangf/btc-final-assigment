@@ -13,6 +13,10 @@ const initialState = {
     originalTitleMoviesLoading: false,
     originalTitleSeries: [],
     originalTitleSeriesLoading: false,
+    overviewMovies: [],
+    overviewMoviesLoading: false,
+    overviewSeries: [],
+    overviewSeriesLoading: false,
 };
 
 function reducer(
@@ -43,7 +47,6 @@ function reducer(
                 top10SeriesLoading: true,
             };
         case actions.GET_TOP_10_SERIES_SUCCESS:
-            console.log("I'm here")
             return {
                 ...state,
                 top10SeriesLoading: false,
@@ -122,6 +125,40 @@ function reducer(
                 ...state,
                 originalTitleSeriesLoading: false,
                 originalTitleSeries: [],
+            };
+        case actions.GET_MOVIES_BY_OVERVIEW:
+            return {
+                ...state,
+                overviewMoviesLoading: true,
+            };
+        case actions.GET_MOVIES_BY_OVERVIEW_SUCCESS:
+            return {
+                ...state,
+                overviewMoviesLoading: false,
+                overviewMovies: action.payload,
+            };
+        case actions.GET_MOVIES_BY_OVERVIEW_ERROR:
+            return {
+                ...state,
+                overviewMoviesLoading: false,
+                overviewMovies: [],
+            };
+        case actions.GET_SERIES_BY_OVERVIEW:
+            return {
+                ...state,
+                overviewSeriesLoading: true,
+            };
+        case actions.GET_SERIES_BY_OVERVIEW_SUCCESS:
+            return {
+                ...state,
+                overviewSeriesLoading: false,
+                overviewSeries: action.payload,
+            };
+        case actions.GET_SERIES_BY_OVERVIEW_ERROR:
+            return {
+                ...state,
+                overviewSeriesLoading: false,
+                overviewSeries: [],
             };
         default:
             return state;
