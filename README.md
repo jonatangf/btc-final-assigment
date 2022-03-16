@@ -2,6 +2,14 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Summary
+
+This project is related to the latest assigment of the GeeksHubs ReactJS Bootcamp, and the idea here is to create an 
+interface for the API exposed by the platform The Movie DB. The API is used to retrieve top-rated movies, top-rated 
+series, and search movies and series.
+
+![Bootcamp gift](https://giphy.com/gifs/macfit360-Y4nmYPgG0dZ5isXwig.gif)
+
 ## Available Scripts
 
 In the project directory, you can run:
