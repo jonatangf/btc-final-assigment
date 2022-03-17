@@ -1,14 +1,33 @@
-# Getting Started with Create React App
+# GeeksHubs ReactJS Bootcamp`s final assigment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository is for the final assigment of the GeeksHubs ReactJS Bootcamp. Enter by your own risk
+
+![](https://www.pngitem.com/pimgs/m/153-1534882_fitness-boot-camp-hd-png-download.png)
 
 ## Summary
 
-This project is related to the latest assigment of the GeeksHubs ReactJS Bootcamp, and the idea here is to create an 
-interface for the API exposed by the platform The Movie DB. The API is used to retrieve top-rated movies, top-rated 
-series, and search movies and series.
+The idea here is to create an interface for the API exposed by the platform The Movie DB. The API is used to retrieve 
+top-rated movies, top-rated series, and search movies and series.
 
-![Bootcamp gift](https://giphy.com/gifs/macfit360-Y4nmYPgG0dZ5isXwig.gif)
+I have used Redux for the state management, and I have used React Router for the routing. 
+
+In order to implement the status management, I have included the <Provider> tag to the file index.js and after that I 
+have created a folder called store, in which I have created three files. The actions file contains the actions that are 
+dispatched to the store, and the reducers file contains the reducers that are used to update the state. Last but not 
+least, I have created a file called store.js, which contains the code to initialize the store.
+
+In order to implement the routing, I have included the <BrowserRouter> tag to the file index.js and after that I have 
+added the tag <Routes> to the component Body. And I have also added the tags <Route> in the Body component for all the
+routes needed. The other important part is to place ```component={Link} to="/"``` in the buttons, so once they are 
+clicked, the user will be redirected to the desired page.
+
+I would also like to mention that I have used loading components to show the user that the data is being retrieved, and 
+variables to show or hide them is stored in the state too.
+
+Regarding the UI, I have used the Bootstrap framework to create the interface together with the library 
+[ReactUI](https://mui.com/getting-started/installation/) from which I used the Grid component for the main layout.
+
+
 
 ## Available Scripts
 
